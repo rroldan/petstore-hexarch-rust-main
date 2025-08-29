@@ -1,0 +1,28 @@
+name: Rust CI 
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  test:
+    name: Run Rust Tests
+    runs-on: ubuntu-latest # Or your preferred OS, but ubuntu-latest is common for Rust/Docker
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          profile: minimal
+          override: true
+  
+
+      - name: Run unit tests
+        run: cargo test
+

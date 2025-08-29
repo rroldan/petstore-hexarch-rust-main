@@ -1,0 +1,29 @@
+-- Add migration script here
+CREATE TABLE  IF NOT EXISTS categories (
+    id BIGINT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL UNIQUE
+);
+
+CREATE TABLE  IF NOT EXISTS pets (
+    id BIGINT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    category_id BIGINT REFERENCES categories(id),
+    status VARCHAR(50) NOT NULL DEFAULT 'available'
+);
+
+CREATE TABLE  IF NOT EXISTS tags (
+    id BIGINT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL UNIQUE
+);
+
+CREATE TABLE  IF NOT EXISTS pet_photos (
+    id BIGSERIAL PRIMARY KEY,
+    pet_id BIGINT REFERENCES pets(id) ON DELETE CASCADE,
+    url VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE  IF NOT EXISTS pet_tags (
+    pet_id BIGINT REFERENCES pets(id) ON DELETE CASCADE,
+    tag_id BIGINT REFERENCES tags(id) ON DELETE CASCADE,
+    PRIMARY KEY (pet_id, tag_id)
+); 
