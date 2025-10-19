@@ -1,0 +1,24 @@
+{
+     "context": {
+          "fileName": "GEMINI.md"
+     },
+     "mcpServers": {
+          "github": {
+               "httpUrl": "https://api.githubcopilot.com/mcp/",
+               "headers": {
+                    "Authorization": "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"
+               },
+               "timeout": 5000
+          },
+          "chrome-devtools": {
+               "comando": "npx",
+               "args": [
+                    "chrome-devtools-mcp@latest"
+               ]
+          },
+          "microsoft.docs.mcp": {
+               "type": "http",
+               "url": "https://learn.microsoft.com/api/mcp"
+          }
+     }
+}

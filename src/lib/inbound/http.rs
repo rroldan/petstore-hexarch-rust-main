@@ -13,7 +13,6 @@ use tokio::net;
 use crate::domain::petstore::ports::PetService;
 
 mod handlers;
-mod responses;
 
 /// Configuration for the HTTP server.
 #[derive(Debug, Clone, PartialEq, Eq)]

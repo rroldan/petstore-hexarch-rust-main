@@ -11,11 +11,7 @@ use crate::domain::petstore::models::pet::Pet;
 use crate::domain::petstore::ports::PetService;
 use crate::inbound::http::AppState;
 
-/// The response body data field for successful [Pet] retrieval.
-#[derive(Debug, Clone, PartialEq, Eq, Serialize)]
-pub struct FindPetErrorData {
-    pub message: String,
-}
+
 
 #[derive(Debug, Clone, PartialEq, Eq, Serialize)]
 pub enum FindPetResponseData {

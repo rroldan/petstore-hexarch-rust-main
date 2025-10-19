@@ -1,0 +1,13 @@
+{
+  "contextFileName": "GEMINI.md",
+
+  "mcpServers": {
+       "github": {
+            "httpUrl": "https://api.githubcopilot.com/mcp/",
+            "headers": {
+                "Authorization": "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"
+            },
+            "timeout": 5000
+       }
+  }
+}

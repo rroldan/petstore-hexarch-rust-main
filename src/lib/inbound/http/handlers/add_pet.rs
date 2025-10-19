@@ -93,19 +93,19 @@ impl From<ParseCreatePetHttpRequestError> for ApiError {
     fn from(e: ParseCreatePetHttpRequestError) -> Self {
         let message = match e {
             ParseCreatePetHttpRequestError::Name(cause) => {
-                format!("pet name {} is invalid", cause.to_string())
+                format!("pet name {} is invalid", cause)
             }
             ParseCreatePetHttpRequestError::Category(cause) => {
-                format!("category {} is invalid", cause.to_string())
+                format!("category {} is invalid", cause)
             }
             ParseCreatePetHttpRequestError::PhotoUrls(cause) => {
-                format!("photo urls {} is invalid", cause.to_string())
+                format!("photo urls {} is invalid", cause)
             }
             ParseCreatePetHttpRequestError::Tags(cause) => {
-                format!("tags {} is invalid", cause.to_string())
+                format!("tags {} is invalid", cause)
             }
             ParseCreatePetHttpRequestError::Status(cause) => {
-                format!("status {} is invalid", cause.to_string())
+                format!("status {} is invalid", cause)
             }
         };
 

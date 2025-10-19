@@ -6,6 +6,12 @@ pub struct Tag {
     pub name: Option<String>,
 }
 
+impl Default for Tag {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl Tag {
     pub fn new() -> Tag {
         Tag {

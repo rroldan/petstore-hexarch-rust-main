@@ -28,7 +28,7 @@ async fn main() -> anyhow::Result<()> {
                 retries -= 1;
                 tokio::time::sleep(tokio::time::Duration::from_secs(1)).await;
             }
-            Err(e) => return Err(e.into()),
+            Err(e) => return Err(e),
         }
     };
 

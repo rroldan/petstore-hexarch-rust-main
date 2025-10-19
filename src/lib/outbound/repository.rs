@@ -43,7 +43,7 @@ impl PetRepository for PostgresClient {
         let pet_id: i64 = sqlx::query_scalar(
             "INSERT INTO pets (id, name, category_id, status) VALUES ($1, $2, $3, $4) RETURNING id"
         )
-        .bind(&req.id)
+        .bind(req.id)
         .bind(&req.name)
         .bind(category_id)
         .bind(req.status.as_ref().map(|s| s.to_str()))
@@ -70,7 +70,7 @@ impl PetRepository for PostgresClient {
                 let tag_id: i64 = sqlx::query_scalar(
                     "INSERT INTO tags (id, name) VALUES ($1, $2) ON CONFLICT (name) DO UPDATE SET name = EXCLUDED.name RETURNING id"
                 )
-                .bind(&tag.id)
+                .bind(tag.id)
                 .bind(&tag.name)
                 .fetch_one(self.pool())
                 .await

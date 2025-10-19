@@ -6,6 +6,12 @@ pub struct Category {
     pub name: Option<String>
 }
 
+impl Default for Category {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl Category {
     /// A category for a pet
     pub fn new() -> Category {
