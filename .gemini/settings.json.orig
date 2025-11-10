@@ -1,13 +1,20 @@
 {
-  "contextFileName": "GEMINI.md",
-
-  "mcpServers": {
-       "github": {
-            "httpUrl": "https://api.githubcopilot.com/mcp/",
-            "headers": {
-                "Authorization": "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"
-            },
-            "timeout": 5000
-       }
-  }
+  "resource_name": "GitHub MCP Server",
+  "resource": "https://api.githubcopilot.com/mcp/",
+  "authorization_servers": ["https://github.com/login/oauth"],
+  "bearer_methods_supported": ["header"],
+  "scopes_supported": [
+    "gist",
+    "notifications",
+    "public_repo",
+    "repo",
+    "repo:status",
+    "repo_deployment",
+    "user",
+    "user:email",
+    "user:follow",
+    "read:gpg_key",
+    "read:org",
+    "project"
+  ]
 }
